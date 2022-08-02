@@ -1,8 +1,10 @@
 import React, { useRef, useState } from 'react';
 import '../css/Body.css';
 import { HexColorPicker } from "react-colorful";
-import { Button, FormControlLabel, Radio, RadioGroup, Slider } from '@mui/material';
+import { Avatar, Button, FormControlLabel, Radio, RadioGroup, Slider, Tooltip } from '@mui/material';
 import { useScreenshot, createFileName } from "use-react-screenshot";
+import { auth } from "./Firebase";
+import { useAuthState } from "react-firebase-hooks/auth"
 
 
 function Body() {
@@ -111,11 +113,17 @@ function Body() {
         }
     }
 
+    const [user] = useAuthState(auth);
+    const signOut = () => {
+        auth.signOut();
+    }
     return (
         <>
-
             <div className="container-fluid">
-                <div>
+                <div style={{ position: "relative" }}>
+                    <Tooltip title="Sign Out">
+                        <Avatar onClick={signOut} id="avatar" alt={user?.displayName} src={user?.photoURL} />
+                    </Tooltip>
                     <div className="card row" >
                         <div className="image col-sm-4 my-5" >
                             <div ref={tshirt}>

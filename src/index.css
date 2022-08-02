@@ -10,6 +10,13 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+#avatar {
+    top: 17px;
+    position: absolute;
+    z-index: 11;
+    right: 17px;
+}
+
 .border__none {
     border: none;
 }
@@ -17,3 +24,11 @@ code {
 .cursor_pointer {
     cursor: pointer;
 }
+
+.inside_login {
+    width: 70vw;
+}
+
+@media only screen and (max-width: 768px) {}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {}
