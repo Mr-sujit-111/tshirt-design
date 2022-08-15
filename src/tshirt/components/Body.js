@@ -154,8 +154,8 @@ function Body() {
                             <h3 className="title">Tatoo (drag and drop on the t-shirt)</h3>
                             <div className="marks row">
                                 {tatoos.map((element, key) => {
-                                    return <div className="col-sm-2">
-                                        <img key={key} src={`./images/tatoos/${element}`} alt="tatoos" onDragStart={dragStart} /> </div>
+                                    return <div className="col-sm-2" key={key}>
+                                        <img src={`./images/tatoos/${element}`} alt="tatoos" onDragStart={dragStart} /> </div>
                                 })}
                             </div>
                             <div className="row">
